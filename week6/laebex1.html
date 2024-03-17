@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txta">
+    <input type="text" id="txtb">
+    <button onclick="tongab();">
+         Tinh tong
+    </button>
+    <div id="result"></div>
+</body>
+<script>
+    function tongab() {
+        var txta = document.getElementById('txta').value;
+        var txtb = document.getElementById('txtb').value;
+        if (txta == null || txta == '' || isNaN(txta)) {
+            alert('Vui long nhap so hop le');
+            return;
+        }
+        if (txtb == null || txtb == '' || isNaN(txtb)) {
+            alert('Vui long nhap so hop le');
+            return;
+        }
+        var result = parseInt(txta) + parseInt(txtb);
+        alert(result);
+        document.getElementById('txta').value = '';
+        document.getElementById('txtb').value = '';
+        var resultElement = document.getElementById('result');
+        resultElement.innerHTML = "<span style='color:blue'><b>Ket qua: " + result + "</b></span>";
+    }
+</script>
+</html>
